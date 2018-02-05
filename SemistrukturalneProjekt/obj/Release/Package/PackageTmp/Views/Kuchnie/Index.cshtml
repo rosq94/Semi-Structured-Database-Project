@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SemistrukturalneProjekt.Models.Kuchnie>
+
+@{
+    ViewBag.Title = "Kuchnie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kuchnie</h2>
+
+<p>
+    @Html.ActionLink("Dodaj nowy produkt", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Zdjęcie
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Generals.Producent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Generals.Cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Generals.Kolor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Generals.Opis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Szerokość)
+        </th>
+        <th>
+            Rodzaj piekarnika
+        </th>
+        <th>
+            Rodzaj płyty grzewczej
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img class="zdjecie" src="@Html.DisplayFor(modelItem => item.Generals.AdresURLZdjęcia)" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Generals.Producent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Generals.Cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Generals.Kolor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Generals.Opis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Szerokość)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RodzajPiekarnika)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RodzajPłytyGrzewczej)
+        </td>
+        <td>
+            @Html.ActionLink("Edytuj", "Edit", new { item.Id }) |
+            @Html.ActionLink("Usuń", "Delete", new { item.Id })
+        </td>
+    </tr>
+}
+
+</table>

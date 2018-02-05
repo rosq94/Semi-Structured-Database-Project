@@ -1,0 +1,89 @@
+﻿@model SemistrukturalneProjekt.Models.Wirówki
+
+@{
+    ViewBag.Title = "Usuń";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Usuń</h2>
+
+<h3>Czy jesteś pewien, że chcesz to usunąć?</h3>
+<div>
+    <h4>Wirówki</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pralki.Generals.AdresURLZdjęcia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pralki.Generals.AdresURLZdjęcia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pralki.Generals.Producent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pralki.Generals.Producent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pralki.Generals.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pralki.Generals.Cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pralki.Generals.Kolor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pralki.Generals.Kolor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pralki.Generals.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pralki.Generals.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pralki.MaxPrędkośćObrotowa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pralki.MaxPrędkośćObrotowa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pralki.WielkośćZaładunku)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pralki.WielkośćZaładunku)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pralki.Moc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pralki.Moc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Wróć do zestawienia", "Index")
+        </div>
+    }
+</div>

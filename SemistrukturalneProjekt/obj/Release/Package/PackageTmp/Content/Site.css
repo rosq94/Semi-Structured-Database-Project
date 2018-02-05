@@ -1,0 +1,55 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.zdjecie {
+    text-decoration: none;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    transform: scale(1,1);
+    transition-timing-function: ease-out;
+    transition-duration: 250ms;
+    -webkit-transform: scale(1,1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1,1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+}
+
+    .zdjecie:hover {
+        opacity: .9;
+        transform: scale(2,2);
+        transition-timing-function: ease-out;
+        transition-duration: 250ms;
+        -webkit-transform: scale(2,2);
+        -webkit-transition-timing-function: ease-out;
+        -webkit-transition-duration: 250ms;
+        -moz-transform: scale(2,1);
+        -moz-transition-timing-function: ease-out;
+        -moz-transition-duration: 250ms;
+        position: relative;
+        z-index: 9;
+    }

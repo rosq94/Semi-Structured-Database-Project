@@ -1,0 +1,103 @@
+﻿@model SemistrukturalneProjekt.Models.Zamrażarki
+
+@{
+    ViewBag.Title = "Usuń";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Usuń</h2>
+
+<h3>Czy jesteś pewien, że chcesz to usunąć?</h3>
+<div>
+    <h4>Zamrażarki</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Generals.AdresURLZdjęcia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lodówki_Zamrażarki.Generals.AdresURLZdjęcia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Generals.Producent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lodówki_Zamrażarki.Generals.Producent)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Generals.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lodówki_Zamrażarki.Generals.Cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Generals.Kolor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lodówki_Zamrażarki.Generals.Kolor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Generals.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lodówki_Zamrażarki.Generals.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Wysokość)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lodówki_Zamrażarki.Wysokość)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Szerokość)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lodówki_Zamrażarki.Szerokość)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Moc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lodówki_Zamrażarki.Moc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PojemnośćZamrażarki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PojemnośćZamrażarki)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zasilanie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zasilanie)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Wróć do zestawienia", "Index")
+        </div>
+    }
+</div>

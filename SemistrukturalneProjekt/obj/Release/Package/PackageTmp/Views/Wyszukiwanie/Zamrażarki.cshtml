@@ -1,0 +1,83 @@
+﻿@model IEnumerable<SemistrukturalneProjekt.Models.Zamrażarki>
+
+@{
+    ViewBag.Title = "Zamrażarki";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Zamrażarki</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Zdjęcie
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Generals.Producent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Generals.Cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Generals.Kolor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Generals.Opis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Wysokość)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Szerokość)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lodówki_Zamrażarki.Moc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PojemnośćZamrażarki)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zasilanie)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img class="zdjecie" src="@Html.DisplayFor(modelItem => item.Lodówki_Zamrażarki.Generals.AdresURLZdjęcia)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lodówki_Zamrażarki.Generals.Cena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lodówki_Zamrażarki.Generals.Producent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lodówki_Zamrażarki.Generals.Kolor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lodówki_Zamrażarki.Generals.Opis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lodówki_Zamrażarki.Wysokość)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lodówki_Zamrażarki.Szerokość)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lodówki_Zamrażarki.Moc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PojemnośćZamrażarki)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zasilanie)
+            </td>
+            <td>
+            </td>
+        </tr>
+    }
+
+</table>

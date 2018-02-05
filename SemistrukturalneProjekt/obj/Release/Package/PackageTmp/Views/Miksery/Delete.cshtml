@@ -1,0 +1,81 @@
+﻿@model SemistrukturalneProjekt.Models.Miksery
+
+@{
+    ViewBag.Title = "Usuń";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Usuń</h2>
+
+<h3>Czy jesteś pewien, że chcesz to usunąć?</h3>
+<div>
+    <h4>Miksery</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Generals.AdresURLZdjęcia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generals.AdresURLZdjęcia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Generals.Producent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generals.Producent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Generals.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generals.Cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Generals.Kolor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generals.Kolor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Generals.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generals.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IlośćPrędkości)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IlośćPrędkości)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Moc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Moc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Wróć do zestawienia", "Index")
+        </div>
+    }
+</div>

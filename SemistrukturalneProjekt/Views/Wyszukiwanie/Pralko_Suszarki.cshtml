@@ -1,0 +1,84 @@
+﻿@model IEnumerable<SemistrukturalneProjekt.Models.Pralko_Suszarki>
+
+@{
+    ViewBag.Title = "Pralko Suszarki";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Pralko Suszarki</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Zdjęcie
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pralki.Generals.Producent)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Pralki.Generals.Cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pralki.Generals.Kolor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pralki.Generals.Opis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pralki.MaxPrędkośćObrotowa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pralki.WielkośćZaładunku)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pralki.Moc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wysokość)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Szerokość)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img class="zdjecie" src="@Html.DisplayFor(modelItem => item.Pralki.Generals.AdresURLZdjęcia)" />
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Pralki.Generals.Producent)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pralki.Generals.Cena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pralki.Generals.Kolor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pralki.Generals.Opis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pralki.MaxPrędkośćObrotowa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pralki.WielkośćZaładunku)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pralki.Moc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wysokość)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Szerokość)
+            </td>
+            <td>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @{
+        Session["KuchnieCount"] = DBCounter.KuchnieCount;
+        Session["LodówkiCount"] = DBCounter.LodówkiCount;
+        Session["MikseryCount"] = DBCounter.MikseryCount;
+        Session["Pralko_SuszarkiCount"] = DBCounter.Pralko_SuszarkiCount;
+        Session["WirówkiCount"] = DBCounter.WirówkiCount;
+        Session["ZamrażarkiCount"] = DBCounter.ZamrażarkiCount;
+        int chłodzenieSuma = ((int)Session["LodówkiCount"] + (int)Session["ZamrażarkiCount"]);
+        int pranieSuma = ((int)Session["Pralko_SuszarkiCount"] + (int)Session["WirówkiCount"]);
+    }
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Produkty AGD", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index", "Kuchnie")">Kuchnie <span class="badge">@Session["KuchnieCount"]</span></a></li>
+                    <li class="dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chłodzenie <span class="badge">@chłodzenieSuma</span><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Lodówki")">Lodówki <span class="badge">@Session["LodówkiCount"]</span></a></li>
+                            <li><a href="@Url.Action("Index", "Zamrażarki")">Zamrażarki <span class="badge">@Session["ZamrażarkiCount"]</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="@Url.Action("Index", "Miksery")">Miksery <span class="badge">@Session["MikseryCount"]</span></a></li>
+                    <li class="dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pranie <span class="badge">@pranieSuma</span><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Pralko_Suszarki")">Pralko-Suszarki <span class="badge">@Session["Pralko_SuszarkiCount"]</span></a></li>
+                            <li><a href="@Url.Action("Index", "Wirówki")">Wirówki <span class="badge">@Session["WirówkiCount"]</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="@Url.Action("Szukaj", "Wyszukiwanie")">Wyszukiwanie</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year — Michał Rosa, Filip Matysiak</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

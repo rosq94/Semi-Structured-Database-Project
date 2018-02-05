@@ -1,0 +1,89 @@
+﻿@model SemistrukturalneProjekt.Models.Kuchnie
+
+@{
+    ViewBag.Title = "Usuń";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Usuń</h2>
+
+<h3>Czy jesteś pewien, że chcesz to usunąć?</h3>
+<div>
+    <h4>Kuchnie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Adres URL Zdjęcia
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generals.AdresURLZdjęcia)
+        </dd>
+       
+        <dt>
+            @Html.DisplayNameFor(model => model.Generals.Producent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generals.Producent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Generals.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generals.Cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Generals.Kolor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generals.Kolor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Generals.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generals.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Szerokość)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Szerokość)
+        </dd>
+
+        <dt>
+            Rodzaj Piekarnika
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RodzajPiekarnika)
+        </dd>
+
+        <dt>
+            Rodzaj płyty grzewczej
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RodzajPłytyGrzewczej)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Wróć do zestawienia", "Index")
+        </div>
+    }
+</div>
